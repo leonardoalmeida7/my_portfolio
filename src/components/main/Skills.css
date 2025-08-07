@@ -1,0 +1,75 @@
+.about-skills h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 26%;
+    gap: 16px;
+    justify-content: center;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    border: 1px solid #141B2A;
+    background-color: var(--Color6);
+    border-radius: 12px;
+    width: 45%;
+    max-width: 500px;
+    height: 180px;
+    cursor: pointer;
+    transition: all .3s ease;
+    
+}
+
+.skill:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 40px #4d88ff77;
+}
+
+.icons {
+    font-size: 2.7rem;
+}
+
+.circles {
+    display: flex;
+
+}
+
+.circle {
+    width: 8px;
+    height: 8px;
+    border: 1px solid #2e3d5f;
+    border-radius: 5px;
+    margin: 10px 1px;
+}
+
+#icon-react:hover {
+    color: var(--Color5);
+}
+
+#icon-nodejs:hover {
+    color: #55ac4d;
+}
+
+#icon-php:hover {
+    color: #848ada;
+}
+
+#icon-bootstrap:hover {
+    color: #8210F3;
+}
+
+#icon-javascript:hover {
+    color: #EFD81D;
+}
+
+#icon-mysql:hover {
+    color:#005E8A;
+}

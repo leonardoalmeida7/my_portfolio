@@ -1,0 +1,91 @@
+.contain-projects {
+    padding: 24px;
+}
+
+.cards-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.apresentation-project {
+    padding: 24px;
+}
+
+.contain-projects h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 60px 0 50px;
+}
+
+.cards-projects .card {
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    transition: all .3s ease;
+}
+
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 42px #4d88ff8c;
+}
+
+.card img {
+    height: 240px;
+    border-radius: 20px 20px 0 0;
+}
+
+.apresentation-project .btns-skills {
+    margin: 26px 0;
+    gap: 8px;
+}
+
+.apresentation-project .btn {
+    padding: 4px 14px;
+    background-color: #1f2c49;
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.btns-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btns-links button {
+    width: 50%;
+    border-radius: 14px;
+    border: none;
+    padding: 8px 0;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btns-links button:hover {
+    transform: scale(1.06);
+}
+
+.space {
+    margin-right: 12px;
+}
+
+.btns-links #btn-demo {
+    background-color: var(--Color11);
+}
+
+.btns-links #btn-git {
+    background-color: var(--Color3);
+    border: 1px solid #2e3d5f;
+    color: #fff;
+}
+
+.btns-links #btn-git:hover {
+    background-color: var(--Color5);
+    color: var(--Color3);
+}

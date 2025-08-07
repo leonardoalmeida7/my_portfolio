@@ -1,0 +1,57 @@
+.about-me {
+    background-color: #0a0a0a;
+    padding: 74px 24px 76px;
+}
+
+.about-me h1 {
+    text-align: center;
+    font-size: 3rem;
+    background: linear-gradient(90deg, var(--Color11), var(--Color14));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+}
+
+.about-me h2 {
+    font-size: 2rem;
+    margin: 44px 0 30px;
+}
+
+.about-me-text {
+    margin-bottom: 26px;
+}
+
+.about-me-text p {
+    font-size: 1.15rem;
+    color: var(--Color8);
+    line-height: 180%;
+}
+
+.btns-skills {
+    margin: 32px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.btns-skills .btn {
+    background-color: #141B2A;
+    padding: 8px 20px;
+    border: 1px solid #2e3d5f;
+    border-radius: 30px;
+    color: var(--Color11);
+    cursor: pointer;
+    font-size: .95rem;
+    transition: all .2s ease;
+}
+
+.btns-skills .btn:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+

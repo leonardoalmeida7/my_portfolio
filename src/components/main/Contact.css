@@ -1,0 +1,131 @@
+.contain-contact {
+    background-color: var(--Color3);
+    padding: 30px 26px;
+}
+
+.contain-contact .text-effect {
+    font-size: 3rem;
+    text-align: center;
+    margin: 26px 0 36px;
+}
+
+.contain-contact h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--Color2);
+    margin-bottom: 26px;
+}
+
+.contain-contact p {
+    color: var(--Color8);
+    font-size: 1.15rem;
+}
+
+.contain-contact .box-contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--Color6);
+    border-radius: 12px;
+    margin: 20px 0;
+    padding: 20px;
+    transition: all .3s ease;
+}
+
+.contain-contact .box-contact:hover {
+    box-shadow: 0 0 42px #4d88ff8c;
+    transform: scale(1.02);
+}
+
+.box-contact .icon {
+    background-color: #1f2c49;
+    border-radius: 14px;
+    padding: 10px;
+    color: var(--Color11);
+    font-size: 1.3rem;
+}
+
+#icon-email {
+    font-size: 1.5rem;
+}
+
+.box-contact .infos {
+    display: flex;
+    flex-direction: column;
+}
+
+.links-social {
+    display: flex;
+    gap: 12px;
+    margin: 46px 0;
+}
+
+.links-social .btn-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111827;
+    border-radius: 17px;
+    width: 48px;
+    height: 50px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.links-social .btn-link:hover {
+    transform: scale(1.02);
+    background-color: #192236;
+}
+
+.links-social .btn-link .icon {
+    color: var(--Color11);
+}
+
+.form-box {
+    background-color: var(--Color6);
+    border-radius: 22px;
+    border: 1px solid var(--Color12);
+    padding: 28px;
+}
+
+.form-box form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box form label {
+    margin-bottom: 10px;
+    font-size: .9rem;
+}
+
+.form-box input, 
+.form-box textarea {
+    border: 1px solid var(--Color12);
+    background-color: var(--Color3);
+    border-radius: 18px;
+    padding: 16px 10px;
+    margin-bottom: 18px;
+    outline: none;
+    transition: all .2s ease;
+    color: var(--Color2);
+}
+
+.form-box input:focus,
+.form-box textarea:focus {
+    outline: 2px solid var(--Color11);
+}
+
+.form-box button {
+    background-color: var(--Color11);
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.form-box button:hover {
+    box-shadow: 0 0 30px #4d88ff73;
+    transform: scale(1.02);
+}
