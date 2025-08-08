@@ -23,6 +23,10 @@
     margin-bottom: 26px;
 }
 
+.container {
+    max-width: 1400px;
+}
+
 .about-me-text p {
     font-size: 1.15rem;
     color: var(--Color8);
@@ -54,4 +58,22 @@
 
 
 
+@media screen and (min-width: 769px) {
+    .container {
+        margin-top: 67px;
+        display: flex;
+        gap: 45px;
+        margin: 50px auto;
+    }
 
+    .container .about-me-text {
+        width: 80%;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .container .about-me-text {
+        width: 50%;
+    }
+}

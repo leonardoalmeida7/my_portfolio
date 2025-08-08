@@ -4,13 +4,15 @@ main {
 
 
 .apresentation {
-    height: 90vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 0 8px;
+    max-width: 900px;
+    margin: auto;
 }
 
 .text-effect {
@@ -24,7 +26,7 @@ main {
 
 .job {
     font-size: 2.2rem;
-    margin: 22px 0;
+    margin: 0 0 22px;
 }
 
 .apresentation .text {
@@ -39,6 +41,7 @@ main {
     align-items: center;
     gap: 20px;
     width: 50%;
+    margin-top: 30px;
 }
 
 .btn-projects {
@@ -49,7 +52,7 @@ main {
     border-radius: 12px;
     border: none;
     background-color: var(--Color11);
-    margin-top: 30px;
+
     cursor: pointer;
     transition: all .3s ease;
 }
@@ -176,8 +179,29 @@ main {
     }
 }
 
-@media screen and (max-height: 500px){
+@media screen and (max-height: 700px){
     .apresentation .mouse-scroll {
         display: none;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .text-effect {
+        font-size: 6.2rem;
+    }
+
+    .job {
+        font-size: 4rem;
+        font-weight: 300;
+        
+    }
+
+    .apresentation .text {
+        font-size: 1.5rem;
+    }
+
+    .apresentation .buttons {
+        flex-direction: row;
+        
     }
 }

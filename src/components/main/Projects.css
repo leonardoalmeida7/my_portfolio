@@ -1,5 +1,7 @@
 .contain-projects {
-    padding: 24px;
+    padding: 24px 24px 100px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .cards-projects {
@@ -18,15 +20,13 @@
     margin: 60px 0 50px;
 }
 
-.cards-projects .card {
-    border: 1px solid white;
-    border-radius: 20px;
-}
-
 .card {
     display: flex;
     flex-direction: column;
     transition: all .3s ease;
+    border-radius: 20px;
+    border: 1px solid var(--Color9);
+    z-index: -5;
 }
 
 .card:hover {
@@ -37,6 +37,12 @@
 .card img {
     height: 240px;
     border-radius: 20px 20px 0 0;
+}
+
+.card p {
+    color: var(--Color13);
+    margin: 10px 0;
+    line-height: 30px;
 }
 
 .apresentation-project .btns-skills {
@@ -88,4 +94,25 @@
 .btns-links #btn-git:hover {
     background-color: var(--Color5);
     color: var(--Color3);
+}
+
+@media screen and (min-width: 769px) {
+    .cards-projects {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card {
+        width: 48%;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    .card p {
+        font-size: .95rem;
+    }
 }

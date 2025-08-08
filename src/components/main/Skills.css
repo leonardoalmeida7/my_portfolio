@@ -73,3 +73,9 @@
 #icon-mysql:hover {
     color:#005E8A;
 }
+
+@media screen and (min-width: 769px) {
+    .skill {
+        width: 30%;
+    }
+}

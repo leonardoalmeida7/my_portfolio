@@ -54,6 +54,11 @@
     flex-direction: column;
 }
 
+.box-contact .infos .info {
+    color: var(--Color13);
+    margin-top: 5px;
+}
+
 .links-social {
     display: flex;
     gap: 12px;
@@ -129,3 +134,37 @@
     box-shadow: 0 0 30px #4d88ff73;
     transform: scale(1.02);
 }
+
+@media screen and (min-width: 769px) {
+    .form-box form .info-client {
+        flex-direction: row;
+        gap: 20px;
+    }
+    .form-box form .info-client div {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px ) {
+    .contain-contact .title {
+        width: 100%;
+    }
+
+    .contain-contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 26px 46px;
+        justify-content: center;
+    }
+
+    .contain-contact .details {
+        width: 45%;
+        max-width: 660px;
+    }
+
+    .contain-contact .form-box {
+        width: 42%;
+        max-width: 660px;
+    }
+}
+

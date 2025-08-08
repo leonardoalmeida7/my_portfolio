@@ -9,7 +9,7 @@ import './Contact.css';
 const Contact = () => {
   return (
     <section className='contain-contact'>
-        <div>
+        <div className="title">
             <h1 className='text-effect'>Vamos Trabalhar Juntos</h1>
         </div>
         <div className='details'>
@@ -44,17 +44,19 @@ const Contact = () => {
         </div>
         <div className="form-box">
             <form action="#" method='POST'>
-                <div>
-                    <label htmlFor="name">Nome</label>
-                    <input type="text" name="name" id="name" placeholder='Seu nome completo'/>
-                </div>
-                <div>
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name='email' id='email' placeholder='seu@email.com'/>
+                <div className="info-client">
+                    <div>
+                        <label htmlFor="name">Nome</label>
+                        <input type="text" name="name" id="name" placeholder='Seu nome completo'/>
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email</label>
+                        <input type="email" name='email' id='email' placeholder='seu@email.com'/>
+                    </div>
                 </div>
                 <div>
                     <label htmlFor="msg">Mensagem</label>
-                    <textarea name='msg' id='msg' placeholder='Sobre o que você gostaria de falar?' rows={10}></textarea>
+                    <textarea name='msg' id='msg' placeholder='Sobre o que você gostaria de falar?' rows={6}></textarea>
                 </div>
                 <button type="submit">Enviar Mensagem</button>
             </form>

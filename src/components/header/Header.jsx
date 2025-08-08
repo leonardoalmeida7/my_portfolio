@@ -33,7 +33,7 @@ const Header = () => {
           </div>
         </div>
     </header>
-    <div className={navActive ? 'nav-bars' : 'hidden' }>
+    <div className={navActive ? 'nav-bars' : 'nav-bars hidden' }>
       <NavBars />
     </div>
     </>

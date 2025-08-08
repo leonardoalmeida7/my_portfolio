@@ -46,7 +46,7 @@ const Projects = () => {
                 <div className='apresentation-project'>
                     <h2 className='project-title'>Projeto Quiz</h2>
                     <p>
-                        Esse sistema foi densenvolvido com apenas tecnologias front-end, uma de suas funcionalidades é lógica de validação de acertos e erros com um sistema de pontuação no final dos quizes. Teste seus conhecimentos de tecnologias front-end com esse quiz.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint corporis aperiam nostrum atque porro. Veniam culpa assumenda eligendi aliquam distinctio.
                     </p>
                     <div className="btns-skills">
                         <button type="button" className="btn">HTML</button>
@@ -65,14 +65,30 @@ const Projects = () => {
                 <div className='apresentation-project'>
                     <h2 className='project-title'>Meu projeto</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum esse atque magnam perspiciatis numquam ipsum dolores illo, labore quasi fugit hic maxime, ab minima quis sed necessitatibus nesciunt pariatur accusantium.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint corporis aperiam nostrum atque porro. Veniam culpa assumenda eligendi aliquam distinctio.
                     </p>
                     <div className="btns-skills">
                         <button type="button" className="btn">React</button>
                         <button type="button" className="btn">Next.js</button>
                         <button type="button" className="btn">TypeScript</button>
+                    </div>
+                    <div className='btns-links'>
+                        <button type='button' id="btn-demo"><FaExternalLinkAlt className="space"/> Demo</button>
+                        <button type='button' id="btn-git" ><FiGithub className="space" /> Código</button>
+                    </div>
+                </div>
+            </div>
+            <div className='card' >
+                <img src="" alt="" />
+                <div className='apresentation-project'>
+                    <h2 className='project-title'>Meu projeto</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint corporis aperiam nostrum atque porro. Veniam culpa assumenda eligendi aliquam distinctio.
+                    </p>
+                    <div className="btns-skills">
+                        <button type="button" className="btn">React</button>
+                        <button type="button" className="btn">Next.js</button>
                         <button type="button" className="btn">PHP</button>
-                        <button type="button" className="btn">Node.js</button>
                         <button type="button" className="btn">MySql</button>
                     </div>
                     <div className='btns-links'>
@@ -86,13 +102,11 @@ const Projects = () => {
                 <div className='apresentation-project'>
                     <h2 className='project-title'>Meu projeto</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum esse atque magnam perspiciatis numquam ipsum dolores illo, labore quasi fugit hic maxime, ab minima quis sed necessitatibus nesciunt pariatur accusantium.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint corporis aperiam nostrum atque porro. Veniam culpa assumenda eligendi aliquam distinctio.
                     </p>
                     <div className="btns-skills">
                         <button type="button" className="btn">React</button>
                         <button type="button" className="btn">Next.js</button>
-                        <button type="button" className="btn">TypeScript</button>
-                        <button type="button" className="btn">PHP</button>
                         <button type="button" className="btn">Node.js</button>
                         <button type="button" className="btn">MySql</button>
                     </div>

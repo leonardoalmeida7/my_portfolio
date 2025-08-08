@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import Header from './components/header/Header'
 import Main from './components/main/Main'
+import Footer from './components/footer/Footer'
 
 import './App.css'
 
@@ -10,8 +11,11 @@ function App() {
 
   return (
     <div className='App'>
-      <Header />
+      <div className='mask'>
+        <Header />
+      </div>
       <Main />
+      <Footer />
     </div>
   )
 }
