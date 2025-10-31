@@ -1,31 +1,68 @@
+/* Variáveis CSS organizadas por categorias */
 :root {
-    --Color1: #FFFFFF;
-    --Color2: #F9FAFA;
-    --Color3: #080808;
-    --Color4: #EF4444;
-    --Color5: #33FFFF;
-    --Color6: #0D0F12;
-    --Color7: #F1F2F4;
-    --Color8: #ABB0BA;
-    --Color9: #1A1D23;
-    --Color10: #111317;
-    --Color11: #4D88FF;
-    --Color12: #21242C;
-    --Color13: #A1A1AA;
-    --Color14: #59248F;
+  /* Cores primárias */
+  --Color1: #ffffff; /* Branco principal */
+  --Color3: #080808; /* Preto */
+  --Color6: #0d0f12; /* Background principal */
+
+  /* Cores de acento */
+  --Color4: #ef4444; /* Vermelho/Error */
+  --Color5: #33ffff; /* Ciano/Accent */
+  --Color11: #4d88ff; /* Azul primário */
+  --Color14: #59248f; /* Roxo */
+
+  /* Tons de cinza */
+  --Color2: #f9fafa; /* Cinza muito claro */
+  --Color7: #f1f2f4; /* Cinza claro */
+  --Color8: #abb0ba; /* Cinza médio */
+  --Color13: #a1a1aa; /* Cinza neutro */
+  --Color9: #1a1d23; /* Cinza escuro */
+  --Color10: #111317; /* Cinza muito escuro */
+  --Color12: #21242c; /* Background de cards */
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Bordas */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+
+  /* Espaçamentos */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Tipografia */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  /* Transições */
+  --transition-fast: 0.15s ease-out;
+  --transition-base: 0.3s ease-out;
+  --transition-slow: 0.5s ease-out;
 }
-
-* {
-    margin: 0;
-    padding: 0;
-
-}
-
-
-body {
-    min-height: 100dvh;
-    font-family: "Inter", sans-serif;
-    background-color: var(--Color6);
-    overflow-x: hidden;
-}
-

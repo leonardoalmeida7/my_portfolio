@@ -1,36 +1,48 @@
-import Skills from './Skills'
-
-import './About.css'
+import Skills from "./Skills";
+import SkillTag from "../ui/SkillTag";
+import { aboutMe, skills } from "../../data/portfolio";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import "./About.css";
 
 const About = () => {
-  return (
-    <section className='about-me'>
-        <div>
-            <h1>Sobre Mim</h1>
-        </div>
-        <div className="container">
-            <div className='about-me-text'>
-                <h2>Desenvolvedor apaixonado por tecnologia</h2>
-                <p>
-                    Com mais de 5 anos de experiência em desenvolvimento web, transformo ideias em soluções digitais inovadoras. Especializado em criar aplicações escaláveis e interfaces elegantes.
-                </p>
-                <br />
-                <p>
-                    Sempre em busca de aprender novas tecnologias e aplicar as melhores práticas de desenvolvimento para entregar produtos de alta qualidade.
-                </p>
-                <div className="btns-skills">
-                    <button type="button" className="btn">React</button>
-                    <button type="button" className="btn">Next.js</button>
-                    <button type="button" className="btn">TypeScript</button>
-                    <button type="button" className="btn">PHP</button>
-                    <button type="button" className="btn">Node.js</button>
-                    <button type="button" className="btn">MySql</button>
-                </div>
-            </div>
-            <Skills />
-        </div>
-    </section>
-  )
-}
+  useScrollAnimation(".about-me", {
+    fromVars: { opacity: 0, y: 60 },
+    toVars: { opacity: 1, y: 0 },
+    duration: 1.2,
+  });
 
-export default About
+  const mainSkills = skills.filter((skill) =>
+    ["React", "Next.js", "TypeScript", "PHP", "Node.js", "MySQL"].includes(
+      skill.name
+    )
+  );
+
+  return (
+    <section className="about-me" id="about">
+      <div>
+        <h1>{aboutMe.title}</h1>
+      </div>
+      <div className="container">
+        <div className="about-me-text">
+          <h2>{aboutMe.subtitle}</h2>
+
+          {aboutMe.description.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+
+          <div className="btns-skills">
+            {mainSkills.map((skill, index) => (
+              <button key={index} type="button" className="btn">
+                {skill.name}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <Skills />
+      </div>
+    </section>
+  );
+};
+
+export default About;

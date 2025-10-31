@@ -1,118 +1,154 @@
 .contain-projects {
-    padding: 24px 24px 100px;
-    max-width: 1400px;
-    margin: 0 auto;
+  padding: 24px 24px 100px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .cards-projects {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .apresentation-project {
-    padding: 24px;
+  padding: 24px;
 }
 
 .contain-projects h1 {
-    font-size: 3rem;
-    text-align: center;
-    margin: 60px 0 50px;
+  font-size: 3rem;
+  text-align: center;
+  margin: 60px 0 50px;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    transition: all .3s ease;
-    border-radius: 20px;
-    border: 1px solid var(--Color9);
-    z-index: -5;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  border: 1px solid var(--Color9);
 }
 
 .card:hover {
-    transform: scale(1.01);
-    box-shadow: 0 0 42px #4d88ff8c;
+  transform: scale(1.01);
+  box-shadow: 0 0 42px #4d88ff8c;
 }
 
 .card img {
-    height: 240px;
-    border-radius: 20px 20px 0 0;
+  height: 240px;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
 }
 
 .card p {
-    color: var(--Color13);
-    margin: 10px 0;
-    line-height: 30px;
+  color: var(--Color13);
+  margin: 10px 0;
+  line-height: 30px;
 }
 
 .apresentation-project .btns-skills {
-    margin: 26px 0;
-    gap: 8px;
+  margin: 26px 0;
+  gap: 8px;
 }
 
 .apresentation-project .btn {
-    padding: 4px 14px;
-    background-color: #1f2c49;
-    font-weight: 600;
-    font-size: .9rem;
+  padding: 4px 14px;
+  background-color: #1f2c49;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .btns-links {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  z-index: 100;
 }
 
 .btns-links button {
-    width: 50%;
-    border-radius: 14px;
-    border: none;
-    padding: 8px 0;
-    font-size: .9rem;
-    cursor: pointer;
-    transition: all .3s ease;
+  width: 50%;
+  border-radius: 14px;
+  border: none;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  cursor: pointer !important;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 101;
 }
 
-.btns-links button:hover {
-    transform: scale(1.06);
+.btns-links button:hover:not(:disabled) {
+  transform: scale(1.06);
+}
+
+.btns-links button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btns-links button:disabled:hover {
+  transform: none;
 }
 
 .space {
-    margin-right: 12px;
+  margin-right: 12px;
 }
 
-.btns-links #btn-demo {
-    background-color: var(--Color11);
+.btns-links .btn-demo {
+  background-color: var(--Color11);
+  color: #000;
+  font-weight: 600;
 }
 
-.btns-links #btn-git {
-    background-color: var(--Color3);
-    border: 1px solid #2e3d5f;
-    color: #fff;
+.btns-links .btn-demo:hover:not(:disabled) {
+  background-color: #00ff88;
+  transform: scale(1.05);
 }
 
-.btns-links #btn-git:hover {
-    background-color: var(--Color5);
-    color: var(--Color3);
+.btns-links .btn-demo:active {
+  transform: scale(0.98);
+  background-color: #00cc66;
+}
+
+.btns-links .btn-git {
+  background-color: var(--Color3);
+  border: 1px solid #2e3d5f;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btns-links .btn-git:hover:not(:disabled) {
+  background-color: var(--Color5);
+  color: var(--Color3);
+  transform: scale(1.05);
+}
+
+.btns-links .btn-git:active {
+  transform: scale(0.98);
+  background-color: #333;
 }
 
 @media screen and (min-width: 769px) {
-    .cards-projects {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-    }
+  .cards-projects {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .card {
-        width: 48%;
-    }
+  .card {
+    width: 48%;
+  }
 
-    .card img {
-        height: 180px;
-    }
+  .card img {
+    height: 180px;
+  }
 
-    .card p {
-        font-size: .95rem;
-    }
+  .card p {
+    font-size: 0.95rem;
+  }
 }

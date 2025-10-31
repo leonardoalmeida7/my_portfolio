@@ -1,0 +1,85 @@
+/* Componente de card de projeto */
+.project-card {
+  background: var(--Color12);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--Color9);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-card--featured {
+  border-color: var(--Color11);
+  box-shadow: 0 0 20px rgba(77, 136, 255, 0.2);
+}
+
+.project-card__image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--Color9);
+}
+
+.project-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-card__image img {
+  transform: scale(1.1);
+}
+
+.project-card__content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--Color1);
+  margin-bottom: 0.75rem;
+}
+
+.project-card__description {
+  color: var(--Color8);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.project-card__technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-card__actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .project-card__content {
+    padding: 1rem;
+  }
+
+  .project-card__actions {
+    flex-direction: column;
+  }
+}

@@ -1,3 +1,11 @@
-@media screen and (min-width: 769px) {
-  
+/* Estilos do componente App */
+.App {
+  min-height: 100vh;
+}
+
+/* Layout responsivo */
+@media (max-width: 768px) {
+  .App {
+    overflow-x: hidden;
+  }
 }

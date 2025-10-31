@@ -1,0 +1,105 @@
+/* Estilos do componente Button reutilizável */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Variantes de cor */
+.btn--primary {
+  background: linear-gradient(135deg, var(--Color11) 0%, var(--Color5) 100%);
+  color: var(--Color1);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(77, 136, 255, 0.4);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--Color11);
+  border: 2px solid var(--Color11);
+}
+
+.btn--secondary:hover {
+  background: var(--Color11);
+  color: var(--Color1);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--Color1);
+  border: 1px solid var(--Color8);
+}
+
+.btn--outline:hover {
+  background: var(--Color1);
+  color: var(--Color6);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--Color1);
+  border: 1px solid transparent;
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn--skill {
+  background: var(--Color12);
+  color: var(--Color1);
+  border: 1px solid var(--Color9);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.btn--skill:hover {
+  background: var(--Color11);
+  border-color: var(--Color11);
+}
+
+/* Tamanhos */
+.btn--small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.btn--medium {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.btn--large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Estados */
+.btn--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Ícone */
+.btn__icon {
+  display: flex;
+  align-items: center;
+}
+
+.btn__text {
+  display: flex;
+  align-items: center;
+}

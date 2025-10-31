@@ -1,207 +1,231 @@
 main {
-    color: var(--Color2);
+  color: var(--Color2);
 }
 
-
 .apresentation {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 8px;
-    max-width: 900px;
-    margin: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 8px;
+  max-width: 900px;
+  margin: auto;
 }
 
 .text-effect {
-    font-size: 3rem;
-    background: linear-gradient(90deg, var(--Color11), var(--Color14));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+  font-size: 3rem;
+  background: linear-gradient(90deg, var(--Color11), var(--Color14));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
+/* Estilo específico para o cursor do typewriter */
+.text-effect span[ref] {
+  background: linear-gradient(90deg, var(--Color11), var(--Color14));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Cursor sempre visível com cor sólida */
+.typewriter-cursor {
+  color: var(--Color11) !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--Color11) !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  display: inline-block !important;
+  opacity: 1;
+  animation: blink 1.2s infinite;
+  font-weight: normal;
+  margin-left: 2px;
+}
 .job {
-    font-size: 2.2rem;
-    margin: 0 0 22px;
+  font-size: 2.2rem;
+  margin: 0 0 16px;
 }
 
 .apresentation .text {
-    font-size: 1.25rem;
-    color: var(--Color8);
-    line-height: 170%;
+  font-size: 1.25rem;
+  color: var(--Color8);
+  line-height: 170%;
 }
 
 .apresentation .buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 50%;
-    margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 50%;
+  margin-top: 20px;
 }
 
 .btn-projects {
-    width: 160px;
-    padding: 14px;
-    font-size: 1.05rem;
-    font-weight: bold;
-    border-radius: 12px;
-    border: none;
-    background-color: var(--Color11);
+  width: 160px;
+  padding: 14px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+  background-color: var(--Color11);
 
-    cursor: pointer;
-    transition: all .3s ease;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .btn-projects:hover {
-    box-shadow: 0 0 30px #4d88ff69;
-    translate: 0 -5px;
+  box-shadow: 0 0 30px #4d88ff69;
+  translate: 0 -5px;
 }
 
 .btn-contact {
-    padding: 12px;
-    width: 230px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--Color2);
-    cursor: pointer;
-    background-color: var(--Color6);
-    border-radius: 12px;
-    border: none;
-    transition: all .3s ease;
+  padding: 12px;
+  width: 230px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--Color2);
+  cursor: pointer;
+  background-color: var(--Color6);
+  border-radius: 12px;
+  border: none;
+  transition: all 0.3s ease;
 }
 
 .btn-contact:hover {
-    background-color: var(--Color5);
-    color: var(--Color3);
-    transform: scale(1.03);
+  background-color: var(--Color5);
+  color: var(--Color3);
+  transform: scale(1.03);
 }
 
 .lights-bg {
-    position: absolute;
-    background: linear-gradient(45deg, var(--Color5), var(--Color11));
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: .25;
-    z-index: -1;
-    height: 440px;
-    width: 80%;
-    animation: light 5s infinite;
-    display: flex;
-    
+  position: absolute;
+  background: linear-gradient(45deg, var(--Color5), var(--Color11));
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.25;
+  z-index: -1;
+  height: 440px;
+  width: 80%;
+  animation: light 5s infinite;
+  display: flex;
 }
 
 .light-1 {
-    align-self: end;
-    background-color: var(--Color5);
-    border-radius: 50%;
-    width: 70%;
-    height: 250px;
-    animation: moveLight 5s infinite;
+  align-self: end;
+  background-color: var(--Color5);
+  border-radius: 50%;
+  width: 70%;
+  height: 250px;
+  animation: moveLight 5s infinite;
 }
 
-
 @keyframes light {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: .3;
-    }
-    100% {
-        transform: scale(1);
-        opacity: .25;
-    }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.25;
+  }
 }
 
 @keyframes moveLight {
-    0% {
-        translate: 0;
-    }
-    50% {
-        translate: 50%;
-    }
-    100% {
-        translate: 0;
-    }
+  0% {
+    translate: 0;
+  }
+  50% {
+    translate: 50%;
+  }
+  100% {
+    translate: 0;
+  }
 }
 
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
 .apresentation .mouse-scroll {
-    position: absolute;
-    bottom: 4%;
-    animation: moveMouse 1.3s infinite;
-    cursor: pointer;
+  position: absolute;
+  bottom: 2%;
+  animation: moveMouse 1.3s infinite;
+  cursor: pointer;
 }
-
 
 @keyframes moveMouse {
-    0% {
-        translate: 0;
-    }
-    50% {
-        translate: 0 -10px;
-    }
-    100% {
-        translate: 0;
-    }
+  0% {
+    translate: 0;
+  }
+  50% {
+    translate: 0 -10px;
+  }
+  100% {
+    translate: 0;
+  }
 }
 
 .apresentation .mouse {
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    height: 36px;
-    width: 20px;
-    color: white;
-    border: 2px solid transparent; /* borda transparente */
-    border-radius: 26px;
-    background: 
-        linear-gradient(var(--Color6), var(--Color6)) padding-box, /* fundo do conteúdo */
-        linear-gradient(45deg, var(--Color14), var(--Color5)) border-box;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  height: 36px;
+  width: 20px;
+  color: white;
+  border: 2px solid transparent; /* borda transparente */
+  border-radius: 26px;
+  background: linear-gradient(var(--Color6), var(--Color6)) padding-box,
+    /* fundo do conteúdo */
+      linear-gradient(45deg, var(--Color14), var(--Color5)) border-box;
 }
 
 .apresentation .mouse .scroll {
-    margin-top: 10px;
-    width: 3px;
-    height: 7px;
-    background: linear-gradient(45deg, var(--Color14), var(--Color5));
+  margin-top: 10px;
+  width: 3px;
+  height: 7px;
+  background: linear-gradient(45deg, var(--Color14), var(--Color5));
 }
-
 
 @media screen and (min-width: 420px) {
-    .text-effect {
-        font-size: 4rem;
-    }
+  .text-effect {
+    font-size: 4rem;
+  }
 }
 
-@media screen and (max-height: 700px){
-    .apresentation .mouse-scroll {
-        display: none;
-    }
+@media screen and (max-height: 700px) {
+  .apresentation .mouse-scroll {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 769px) {
-    .text-effect {
-        font-size: 6.2rem;
-    }
+  .text-effect {
+    font-size: 6.2rem;
+  }
 
-    .job {
-        font-size: 4rem;
-        font-weight: 300;
-        
-    }
+  .job {
+    font-size: 4rem;
+    font-weight: 300;
+  }
 
-    .apresentation .text {
-        font-size: 1.5rem;
-    }
+  .apresentation .text {
+    font-size: 1.5rem;
+  }
 
-    .apresentation .buttons {
-        flex-direction: row;
-        
-    }
+  .apresentation .buttons {
+    flex-direction: row;
+  }
 }
