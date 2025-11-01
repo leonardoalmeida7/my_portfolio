@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SCROLL_CONFIG } from "../constants";
@@ -6,6 +6,8 @@ import { SCROLL_CONFIG } from "../constants";
 gsap.registerPlugin(ScrollTrigger);
 
 export const useScrollAnimation = (selector, config = {}) => {
+  const triggersRef = useRef([]);
+
   const {
     start = SCROLL_CONFIG.triggerStart,
     toggleActions = SCROLL_CONFIG.toggleActions,
@@ -20,21 +22,31 @@ export const useScrollAnimation = (selector, config = {}) => {
 
     if (elements.length === 0) return;
 
+    // Limpar triggers anteriores
+    triggersRef.current.forEach((trigger) => trigger.kill());
+    triggersRef.current = [];
+
     elements.forEach((element) => {
-      gsap.fromTo(element, fromVars, {
+      const animation = gsap.fromTo(element, fromVars, {
         scrollTrigger: {
           trigger: element,
           start,
           toggleActions,
+          once: true, // Executar apenas uma vez
         },
         ...toVars,
         duration,
         ease: "power3.out",
       });
+
+      if (animation.scrollTrigger) {
+        triggersRef.current.push(animation.scrollTrigger);
+      }
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      triggersRef.current.forEach((trigger) => trigger.kill());
+      triggersRef.current = [];
     };
-  }, [selector, start, toggleActions, duration, stagger, fromVars, toVars]);
+  }, [selector]);
 };

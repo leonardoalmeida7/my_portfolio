@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { FORM_CONFIG } from "../constants";
 
 export const useForm = (initialValues, validationRules = {}) => {
@@ -35,15 +35,15 @@ export const useForm = (initialValues, validationRules = {}) => {
     return "";
   };
 
-  const setValue = (name, value) => {
-    setValues((prev) => ({ ...prev, [name]: value }));
+  const setValue = useCallback((name, value) => {
+    setValues((prev) => {
+      // Evitar re-render se o valor não mudou
+      if (prev[name] === value) return prev;
+      return { ...prev, [name]: value };
+    });
+  }, []);
 
-    // Validar campo em tempo real
-    const error = validateField(name, value);
-    setErrors((prev) => ({ ...prev, [name]: error }));
-  };
-
-  const validateForm = () => {
+  const validateForm = useCallback(() => {
     const newErrors = {};
     let isValid = true;
 
@@ -57,20 +57,37 @@ export const useForm = (initialValues, validationRules = {}) => {
 
     setErrors(newErrors);
     return isValid;
-  };
+  }, [values, validationRules]);
 
-  const handleSubmit = async (onSubmit) => {
-    if (!validateForm()) return;
+  const handleSubmit = useCallback(
+    async (onSubmit) => {
+      const newErrors = {};
+      let isValid = true;
 
-    setIsSubmitting(true);
-    try {
-      await onSubmit(values);
-    } catch (error) {
-      console.error("Erro no envio do formulário:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+      Object.keys(validationRules).forEach((fieldName) => {
+        const error = validateField(fieldName, values[fieldName] || "");
+        if (error) {
+          newErrors[fieldName] = error;
+          isValid = false;
+        }
+      });
+
+      setErrors(newErrors);
+
+      if (!isValid) return;
+
+      setIsSubmitting(true);
+      try {
+        await onSubmit(values);
+      } catch (error) {
+        console.error("Erro no envio do formulário:", error);
+        throw error;
+      } finally {
+        setIsSubmitting(false);
+      }
+    },
+    [values, validationRules]
+  );
 
   const reset = () => {
     setValues(initialValues);

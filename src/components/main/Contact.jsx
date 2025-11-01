@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState, useMemo } from "react";
 import { LuPhone } from "react-icons/lu";
 import { MdOutlineEmail } from "react-icons/md";
 import { FiGithub } from "react-icons/fi";
@@ -11,14 +11,22 @@ import { copyToClipboard } from "../../utils";
 import "./Contact.css";
 
 const Contact = () => {
-  useScrollAnimation(".contain-contact", {
-    fromVars: { opacity: 0, y: 50 },
-    toVars: { opacity: 1, y: 0 },
-  });
+  const [submitStatus, setSubmitStatus] = useState({ type: "", message: "" });
 
-  const { values, errors, isSubmitting, setValue, handleSubmit } = useForm(
-    { name: "", email: "", message: "" },
-    {
+  // Memoizar configuração de animação
+  const scrollConfig = useMemo(
+    () => ({
+      fromVars: { opacity: 0, y: 50 },
+      toVars: { opacity: 1, y: 0 },
+    }),
+    []
+  );
+
+  useScrollAnimation(".contain-contact", scrollConfig);
+
+  // Memoizar as regras de validação para evitar re-criação
+  const validationRules = useMemo(
+    () => ({
       name: {
         required: true,
         minLength: 2,
@@ -38,20 +46,96 @@ const Contact = () => {
         requiredMessage: "Mensagem é obrigatória",
         minLengthMessage: "Mensagem deve ter pelo menos 10 caracteres",
       },
-    }
+    }),
+    []
   );
 
-  const onSubmit = async (formData) => {
-    console.log("Dados do formulário:", formData);
-    alert("Mensagem enviada com sucesso!");
-  };
+  const { values, errors, isSubmitting, setValue, handleSubmit, reset } =
+    useForm({ name: "", email: "", message: "" }, validationRules);
 
-  const handleCopyEmail = async () => {
+  const onSubmit = useCallback(
+    async (formData) => {
+      try {
+        setSubmitStatus({ type: "", message: "" });
+
+        const response = await fetch(
+          "https://api-portfolio-moc8.onrender.com/send",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: formData.name,
+              email: formData.email,
+              message: formData.message,
+            }),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`Erro HTTP: ${response.status}`);
+        }
+
+        const result = await response.json();
+        setSubmitStatus({
+          type: "success",
+          message:
+            "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+        });
+        reset(); // Limpar formulário após sucesso
+      } catch (error) {
+        console.error("Erro ao enviar mensagem:", error);
+        setSubmitStatus({
+          type: "error",
+          message:
+            "Erro ao enviar mensagem. Tente novamente ou entre em contato diretamente.",
+        });
+      }
+    },
+    [reset]
+  );
+
+  const handleCopyEmail = useCallback(async () => {
     const success = await copyToClipboard(personalInfo.email);
     if (success) {
-      alert("Email copiado para a área de transferência!");
+      setSubmitStatus({
+        type: "info",
+        message: "Email copiado para a área de transferência!",
+      });
+      setTimeout(() => setSubmitStatus({ type: "", message: "" }), 3000);
     }
-  };
+  }, []);
+
+  // Handlers memoizados para os inputs
+  const handleNameChange = useCallback(
+    (e) => {
+      setValue("name", e.target.value);
+    },
+    [setValue]
+  );
+
+  const handleEmailChange = useCallback(
+    (e) => {
+      setValue("email", e.target.value);
+    },
+    [setValue]
+  );
+
+  const handleMessageChange = useCallback(
+    (e) => {
+      setValue("message", e.target.value);
+    },
+    [setValue]
+  );
+
+  const handleFormSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      handleSubmit(onSubmit);
+    },
+    [handleSubmit, onSubmit]
+  );
 
   return (
     <section className="contain-contact" id="contact">
@@ -93,12 +177,12 @@ const Contact = () => {
         </div>
       </div>
       <div className="form-box">
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmit(onSubmit);
-          }}
-        >
+        {submitStatus.message && (
+          <div className={`form-status form-status--${submitStatus.type}`}>
+            {submitStatus.message}
+          </div>
+        )}
+        <form onSubmit={handleFormSubmit}>
           <div className="info-client">
             <div>
               <label htmlFor="name">Nome</label>
@@ -108,7 +192,7 @@ const Contact = () => {
                 id="name"
                 placeholder="Seu nome completo"
                 value={values.name}
-                onChange={(e) => setValue("name", e.target.value)}
+                onChange={handleNameChange}
               />
               {errors.name && (
                 <span style={{ color: "red", fontSize: "0.8rem" }}>
@@ -124,7 +208,7 @@ const Contact = () => {
                 id="email"
                 placeholder="seu@email.com"
                 value={values.email}
-                onChange={(e) => setValue("email", e.target.value)}
+                onChange={handleEmailChange}
               />
               {errors.email && (
                 <span style={{ color: "red", fontSize: "0.8rem" }}>
@@ -141,7 +225,7 @@ const Contact = () => {
               placeholder="Sobre o que você gostaria de falar?"
               rows={6}
               value={values.message}
-              onChange={(e) => setValue("message", e.target.value)}
+              onChange={handleMessageChange}
             />
             {errors.message && (
               <span style={{ color: "red", fontSize: "0.8rem" }}>
@@ -158,4 +242,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default React.memo(Contact);

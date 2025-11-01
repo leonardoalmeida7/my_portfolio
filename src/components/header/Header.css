@@ -103,7 +103,9 @@ header {
     height: 80px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
+
   header {
     display: inline-block;
     padding: 26px;
@@ -118,6 +120,7 @@ header {
 
   .nav-bars {
     display: inline-block !important;
+    position: static;
     background-color: transparent;
     width: auto;
     padding: 21px;
@@ -129,15 +132,19 @@ header {
 
   .nav-bars nav {
     display: flex;
+    align-items: center;
   }
 
   .nav-bars nav ul {
     display: flex;
     align-items: center;
+    margin: 0;
+    padding: 0;
   }
 
   .nav-bars nav ul li {
     margin: 0 18px;
+    margin-bottom: 0;
   }
 
   .nav-bars nav ul li::after {
@@ -157,6 +164,7 @@ header {
     width: 120px;
     height: 38px;
     padding: 5px;
+    margin-left: 20px;
   }
 }
 
