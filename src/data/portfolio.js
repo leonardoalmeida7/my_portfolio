@@ -64,13 +64,13 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Weather Now",
+    title: "FlashCard App",
     description:
-      "Plataforma completa de previsão do tempo com integração de APIs e interface responsiva.",
-    image: "/my_portfolio/images/projects/WeatherApp.png",
-    technologies: ["React", "JavaScript", "Bootstrap", "API"],
-    demoUrl: "https://leonardoalmeida7.github.io/weather_now/",
-    codeUrl: "https://github.com/leonardoalmeida7/weather_now",
+      "Aplicação de flashcards para estudo e memorização eficiente.",
+    image: "/my_portfolio/images/projects/FlashCardApp.png",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    demoUrl: "https://leonardoalmeida7.github.io/flashcard_app/",
+    codeUrl: "https://github.com/leonardoalmeida7/flashcard_app",
     featured: false,
   },
   {
