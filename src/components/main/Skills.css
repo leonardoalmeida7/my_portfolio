@@ -50,6 +50,10 @@
     margin: 10px 1px;
 }
 
+#icon-tailwind:hover {
+    color: #06B6D4;
+}
+
 #icon-react:hover {
     color: var(--Color5);
 }
@@ -72,6 +76,18 @@
 
 #icon-mysql:hover {
     color:#005E8A;
+}
+
+#icon-typescript:hover {
+    color: #3178C6;
+}
+
+#icon-nextjs:hover {
+    color: #272727;
+}
+
+#icon-mongodb:hover {
+    color: #47A248;
 }
 
 @media screen and (min-width: 769px) {

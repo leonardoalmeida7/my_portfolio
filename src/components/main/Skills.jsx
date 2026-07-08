@@ -1,8 +1,9 @@
 import React from "react";
 import { FaReact, FaNodeJs, FaPhp, FaBootstrap } from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
 import { DiJavascript1 } from "react-icons/di";
 import { GrMysql } from "react-icons/gr";
-import { SiTypescript, SiNextdotjs, SiHtml5, SiCss3 } from "react-icons/si";
+import { SiTypescript, SiNextdotjs, SiHtml5, SiCss3, SiMongodb } from "react-icons/si";
 import { skills } from "../../data/portfolio";
 import "./Skills.css";
 
@@ -17,8 +18,8 @@ const Skills = () => {
     MySQL: <GrMysql />,
     TypeScript: <SiTypescript />,
     "Next.js": <SiNextdotjs />,
-    HTML: <SiHtml5 />,
-    CSS: <SiCss3 />,
+    Tailwind: <RiTailwindCssFill />,
+    MongoDB: <SiMongodb />,
   };
 
   // Renderizar círculos baseado no nível da skill

@@ -27,8 +27,8 @@ export const skills = [
   { name: "PHP", level: 75, category: "backend" },
   { name: "Node.js", level: 85, category: "backend" },
   { name: "MySQL", level: 70, category: "database" },
-  { name: "HTML", level: 95, category: "frontend" },
-  { name: "CSS", level: 90, category: "frontend" },
+  { name: "Tailwind", level: 95, category: "frontend" },
+  { name: "MongoDB", level: 90, category: "database" },
   { name: "JavaScript", level: 90, category: "language" },
   { name: "Bootstrap", level: 80, category: "frontend" },
 ];
