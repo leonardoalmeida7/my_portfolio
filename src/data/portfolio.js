@@ -69,7 +69,7 @@ export const projects = [
       "Aplicação de flashcards para estudo e memorização eficiente.",
     image: "/my_portfolio/images/projects/FlashCardApp.png",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    demoUrl: "https://leonardoalmeida7.github.io/flashcard_app/",
+    demoUrl: "https://flashcard-app-kappa-one.vercel.app/",
     codeUrl: "https://github.com/leonardoalmeida7/flashcard_app",
     featured: false,
   },
