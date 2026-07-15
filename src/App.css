@@ -1,6 +1,7 @@
 /* Estilos do componente App */
 .App {
   min-height: 100vh;
+  padding-top: 82px;
 }
 
 /* Layout responsivo */

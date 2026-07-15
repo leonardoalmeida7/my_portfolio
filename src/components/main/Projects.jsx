@@ -7,10 +7,13 @@ import "./Projects.css";
 
 const Projects = () => {
   useScrollAnimation(".card", {
-    fromVars: { opacity: 0, y: 50 },
+    triggerSelector: ".contain-projects",
+    fromVars: { opacity: 0, y: 65 },
     toVars: { opacity: 1, y: 0 },
-    duration: 1.5,
-    stagger: 0.2,
+    duration: 0.9,
+    stagger: 0.14,
+    start: "top 82%",
+    toggleActions: "play none none reset",
   });
 
   const handleDemoClick = (project) => {

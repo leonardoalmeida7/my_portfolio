@@ -84,6 +84,17 @@ export const projects = [
     codeUrl: "https://github.com/leonardoalmeida7/frontend_notesapp",
     featured: false,
   },
+  {
+    id: 5,
+    title: "Wild Haven",
+    description:
+      "Aplicação Full Stack para gerenciamento de reservas em ambientes naturais. Permite aos usuários explorar, reservar e gerenciar experiências ao ar livre.",
+    image: "/my_portfolio/images/projects/wild-haven-gamma.vercel.app.png",
+    technologies: ["React", "Supabase", "Tailwind CSS", "Vite"],
+    demoUrl: "https://wild-haven-gamma.vercel.app/",
+    codeUrl: "https://github.com/leonardoalmeida7/wild-haven",
+    featured: false,
+  },
 ];
 
 export const navigationItems = [
