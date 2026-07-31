@@ -95,6 +95,17 @@ export const projects = [
     codeUrl: "https://github.com/leonardoalmeida7/wild-haven",
     featured: false,
   },
+  {
+    id: 6,
+    title: "CinePremium",
+    description:
+      "Aplicação Full Stack para usuários explorarem filmes, séries e conteúdos premium. Permite aos usuários criar listas de favoritos.",
+    image: "/my_portfolio/images/projects/cine-premium-preview.png",
+    technologies: ["React", "SQLite", "Tailwind CSS", "Vite", "Node.js", "Express"],
+    demoUrl: "https://cine-premium-frontend.vercel.app/",
+    codeUrl: "https://github.com/leonardoalmeida7/CinePremium_Frontend.git",
+    featured: false,
+  }
 ];
 
 export const navigationItems = [
